@@ -22,8 +22,13 @@ ${answers.license}
 ## Features
 ${answers.features}  
 ## Tests
-${answers.tests}`
+${answers.tests}
+## Questions
+For further questions feel free to reach me by email. ${answers.email}
 
+[Github](https://github.com/${answers.github}/)
+
+`
 
 inquirer
   .prompt([
@@ -67,6 +72,18 @@ inquirer
       name: 'tests',
       message: 'What steps are necessary for testing?',
     },
+    {
+      type:'input',
+      name:'email',
+      message:'What is your email?',
+    
+    },
+    {
+      type:'input',
+      name:'github',
+      message:'What is your github username?',
+    },
+
   ])
   .then((answers) => {
     const readmePageContent = generateReadme(answers);
